@@ -2,10 +2,10 @@
 #include <string.h>
 
 long long compute_hash(char *s) { /*function to be exported to Python*/
-    const int m = 1e9 + 9;
-    const int p = 31;
-    long long hash_value = 0;
-    long long p_pow = 1;
+    const int m = 1e9 + 9;        /*max hash value from the character*/
+    const int p = 31;             /*a prime number that is used to calculate the hash*/
+    long long hash_value = 0;     /*the initial hash value*/
+    long long p_pow = 1;          /*  31^0  */
     int len = strlen(s);
     for (int i = 0; i < len; i++) {
     hash_value = (hash_value + (s[i] - 'a' + 1) * p_pow) % m;
